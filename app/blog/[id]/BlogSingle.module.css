@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+
+.l_post_single {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  margin: 0 auto 50px;
+}
+
+.l_post_single .l_ttl {
+  border-bottom: 3px solid var(--border);
+  font-size: 2.2rem;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.l_post_single .post_data {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.l_post_single .post_data time {
+  display: inline-block;
+  font-family: var(--heading-font);
+  color: var(--gray);
+  font-size: 1.4rem;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+.l_post_single .post_data .category {
+  display: inline-block;
+  background-color: #D8CDAE;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0 5px;
+  margin-right: 10px;
+}
+
+.postdata h2 {
+  background-color: var(--bg-cream);
+  font-size: 2.4rem;
+  position: relative;
+  padding: 0 0 2px 30px;
+  margin-bottom: 30px;
+}
+
+.postdata h2::before {
+  content: "";
+  background-color: var(--blown);
+  width: 20px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.postdata h3 {
+  font-size: 1.8rem;
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+.postdata p,
+.postdata ul,
+.postdata ol {
+  margin-bottom: 15px;
+}
+
+.postdata a {
+  text-decoration: underline;
+}
+
+.postdata a:hover {
+  text-decoration: none;
+}
+
+.postdata strong {
+  font-weight: bold;
+}
+
+.postdata em {
+  font-style: italic;
+}
+
+.postdata ul li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.postdata ul li:before {
+  content: "";
+  background: var(--blown);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 1em;
+  width: 5px;
+  height: 5px;
+}
+
+.postdata ol {
+  counter-reset: number;
+}
+
+.postdata ol li {
+  padding-left: 30px;
+  position: relative;
+}
+
+.postdata ol li::before {
+  background-color: var(--blown);
+  border-radius: 15px;
+  color: #fff;
+  counter-increment: number;
+  content: counter(number);
+  font-size: 11px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  line-height: 20px;
+  text-align: center;
+  padding-left: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.postdata ol li>ol {
+  counter-reset: number;
+}
+
+.postdata th {
+  background: var(--blown);
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .postdata h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .postdata h3 {
+    font-size: 1.8rem;
+  }
+}

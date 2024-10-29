@@ -32,19 +32,31 @@ export default async function Blog() {
                 return (
                   <li key={index}>
                     <Link href={`/blog/${post.id}`}>
-                      {post.eyecatch?.url && (
-                        <Image
-                          src={post.eyecatch.url}
-                          alt={post.eyecatch.alt || ''}
-                          width={800}
-                          height={590}
-                          className={styles.list_img}
-                        />
-                      )}
+                      <figure className={styles.list_img}>
+                        {post.eyecatch?.url ? (
+                          <Image
+                            src={post.eyecatch.url}
+                            alt={post.eyecatch.alt || ''}
+                            width={800}
+                            height={590}
+                            className={styles.list_img}
+                          />
+                        ) : (
+                          <Image
+                            src="/images/now_printing.jpg"
+                            alt="Now Printing"
+                            width={800}
+                            height={590}
+                            className={styles.list_img}
+                          />
+                        )}
+                      </figure>
                       <div className={styles.list_desc}>
                         <time dateTime={post.createdAt}>{formattedDate}</time>
                         <h3 className={styles.list_ttl}>{post.title}</h3>
-                        <span className={styles.category}>{post.category.name}</span>
+                        {post.category?.name && (
+                          <span className={styles.category}>{post.category.name}</span>
+                        )}
                       </div>
                     </Link>
                   </li>
