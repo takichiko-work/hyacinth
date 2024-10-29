@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.page_ttl_wrap {
+  background: url(/images/under/page-ttl.jpg) no-repeat center/cover;
+  width: 80%;
+  height: 400px;
+  margin: 0 0 0 auto;
+  position: relative;
+}
+
+.page_ttl_wrap::before {
+  content: "";
+  background-color: var(--bg-cream);
+  width: 720px;
+  height: 320px;
+  position: absolute;
+  top: -90px;
+  left: -25%;
+  z-index: -1;
+}
+
+.page_ttl_wrap .page_ttl {
+  position: absolute;
+  top: 43%;
+  left: -20%;
+}
+
+.page_ttl_wrap .page_ttl .en {
+  font-family: var(--en);
+  font-size: 10rem;
+  color: var(--blown);
+  text-shadow: 1px 1px 8px #fff, -1px 1px 8px #fff, 1px -1px 8px #fff, -1px -1px 8px #fff;
+  line-height: 1;
+}
+
+.page_ttl_wrap .page_ttl .jp {
+  font-family: var(--heading-font);
+  font-size: 3.2rem;
+  line-height: 1.2;
+}

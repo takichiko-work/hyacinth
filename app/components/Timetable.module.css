@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.time_table {
+  font-size: 1.5rem;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+.time_table_head .item {
+  padding: 10px 0;
+}
+
+.time_table_body {
+  border-top: 1px solid #CEC6B5;
+}
+
+.time_table_body .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.time_table_body .item:first-child {
+  letter-spacing: 0;
+}
+
+.time_table_head,
+.time_table_body {
+  display: grid;
+  grid-template-columns: 120px repeat(6, 1fr) 60px;
+}
+
+.time_table.large {
+  padding: 0;
+}
+
+.time_table.large .time_table_head,
+.time_table.large .time_table_body {
+  grid-template-columns: 220px repeat(6, 1fr) 100px;
+}

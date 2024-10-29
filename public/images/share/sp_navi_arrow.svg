@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.186" height="9.753" viewBox="0 0 21.186 9.753">
+  <g id="sp_navi_arrow" transform="translate(-0.003 -0.624)">
+    <g id="Group-3" transform="translate(20.5 9.688) rotate(180)">
+      <g id="Group-2">
+        <path id="Line-2" d="M7,4.375,0,0" transform="translate(0 4)" fill="none" stroke="#B7A676" stroke-linecap="square" stroke-width="1" fill-rule="evenodd"/>
+        <path id="Line-2-2" data-name="Line-2" d="M7,0,0,4.375" transform="translate(7 4.375) rotate(180)" fill="none" stroke="#B7A676" stroke-linecap="square" stroke-width="1" fill-rule="evenodd"/>
+      </g>
+      <path id="Line" d="M19,0H0" transform="translate(0.997 4.188)" fill="none" stroke="#B7A676" stroke-linecap="square" stroke-width="1" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

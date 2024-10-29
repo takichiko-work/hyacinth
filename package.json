@@ -1,0 +1,22 @@
+{
+  "name": "hyacinth",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide": "^4.1.4",
+    "html-react-parser": "^5.1.18",
+    "microcms-js-sdk": "^3.1.2",
+    "next": "14.2.16",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.80.4",
+    "splide-nextjs": "^2.4.23"
+  }
+}
