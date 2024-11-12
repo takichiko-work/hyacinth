@@ -1,6 +1,6 @@
 import styles from './BlogSingle.module.css'
 import U_header from '@/app/components/U_header';
-import Pagination from '@/app/components/Pagination';
+import SinglePagination from '@/app/components/SinglePagination';
 import { client } from '@/libs/client'
 import parse from 'html-react-parser';
 
@@ -11,6 +11,32 @@ export default async function BlogSingle({ params }) {
     endpoint: 'blog',
     contentId: params.id,
   });
+
+  // 前後の記事のデータを取得
+  const currentPostDate = post.createdAt; // 現在の記事の投稿日
+
+  const [prevResponse, nextResponse] = await Promise.all([
+    //前の記事を取得
+    client.get({
+      endpoint: 'blog',
+      queries: {
+        filters: `createdAt[less_than]${currentPostDate}`,
+        limit: 1,
+        orders: '-createdAt',
+      },
+    }),
+    //後の記事を取得
+    client.get({
+      endpoint: 'blog',
+      queries: {
+        filters: `createdAt[greater_than]${currentPostDate}`,
+        limit: 1,
+        orders: 'createdAt',
+      },
+    }),
+  ]);
+  const prevPost = prevResponse.contents.length > 0 ? prevResponse.contents[0] : null;
+  const nextPost = nextResponse.contents.length > 0 ? nextResponse.contents[0] : null;
 
   // 日付を整形
   const date = new Date(post.createdAt);
@@ -37,6 +63,7 @@ export default async function BlogSingle({ params }) {
               <div className={styles.postdata}>
                 {parse(post.content)}
               </div>
+              <SinglePagination prevPost={prevPost} nextPost={nextPost} />
             </div>
           </div>
         </section>
